@@ -51,8 +51,14 @@ function refreshWeather(response) {
     if (minute < 10) {
       minute = `0${minute}`;
     }
+    let am_pm = date;
+    if (hour < 12) {
+      am_pm = "AM";
+    } else {
+      am_pm = "PM";
+    }
   
-    return `${day}, ${hour}:${minute}`;
+    return `${day}, ${hour}:${minute} ${am_pm}`;
   }
   
   function searchCity(city) {
